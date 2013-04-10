@@ -3,11 +3,11 @@ import os
 
 PROJECT_DIR = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), os.path.pardir))
 
-DEBUG = False
+DEBUG = True
 TEMPLATE_DEBUG = DEBUG
 
 ADMINS = (
-    # ('Your Name', 'your_email@example.com'),
+    # ('Admin Name', 'admin@yourserver.com'),
 )
 
 MANAGERS = ADMINS
@@ -27,11 +27,11 @@ DATABASES = {
 # http://en.wikipedia.org/wiki/List_of_tz_zones_by_name
 # although not all choices may be available on all operating systems.
 # In a Windows environment this must be set to your system time zone.
-TIME_ZONE = 'Europe/London'
+TIME_ZONE = 'America/Chicago'
 
 # Language code for this installation. All choices can be found here:
 # http://www.i18nguy.com/unicode/language-identifiers.html
-LANGUAGE_CODE = 'en-gb'
+LANGUAGE_CODE = 'en-us'
 
 SITE_ID = 1
 
@@ -59,11 +59,11 @@ MEDIA_URL = ''
 # Don't put anything in this directory yourself; store your static files
 # in apps' "static/" subdirectories and in STATICFILES_DIRS.
 # Example: "/home/media/media.lawrence.com/static/"
-STATIC_ROOT = os.path.join(PROJECT_DIR, 'static')
+STATIC_ROOT = os.path.join(PROJECT_DIR, 'static_crypt')
 
 # URL prefix for static files.
 # Example: "http://media.lawrence.com/static/"
-STATIC_URL = '/static/'
+STATIC_URL = '/static_crypt/'
 
 # URL prefix for admin static files -- CSS, JavaScript and images.
 # Make sure to use a trailing slash.
@@ -80,8 +80,13 @@ STATICFILES_DIRS = (
     os.path.join(PROJECT_DIR, 'site_static'),
 )
 
-LOGIN_URL='/login/'
-LOGIN_REDIRECT_URL='/'
+# This will set up things to be served at http(s)://your.server.com/crypt
+# to server with no sub path comment out the next two lines and uncomment the next two after that lines
+LOGIN_URL='/crypt/login/'
+LOGIN_REDIRECT_URL='/crypt/'
+#LOGIN_URL='/login/'
+#LOGIN_REDIRECT_URL='/'
+
 
 # List of finder classes that know how to find static files in
 # various locations.
@@ -92,7 +97,7 @@ STATICFILES_FINDERS = (
 )
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '6%y8=x5(#ufxd*+d+-ohwy0b$5z^cla@7tvl@n55_h_cex0qat'
+SECRET_KEY = '6%y8=x5(#u1xd*+d+-ohwy0b$5z^cla@7tvl@n55_h_cex0qat'
 
 # List of callables that know how to import templates from various sources.
 TEMPLATE_LOADERS = (

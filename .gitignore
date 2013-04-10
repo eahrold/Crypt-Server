@@ -5,3 +5,4 @@ local_settings.py
 fvserver/settings.py
 crypt.db
 fvserver.db
+.DS_Store
