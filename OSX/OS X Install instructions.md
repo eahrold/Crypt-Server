@@ -1,9 +1,10 @@
 *please see the README.md at the root of this project for more general instructions*
 
-#OS X Setup#
+##OS X Setup#
 
 These are examples of how to configre this to function on an OS X Mountian Lion Server (it should also work for Lion)
 It uses the webappctl control, but can also be used with the server app.
+
 
 this project was forked with the intention of running on sub-path of /crypt (eg http://your.server.com/crypt)
 and that is represented in the included httpd_crypt.conf file with the WSGIScriptAlias line
@@ -22,9 +23,10 @@ Edit crypt.wsgi specifiying your virtualenv directory and place in
 
 Now edit the httpd_crypt.conf specifying the location of where you just placed the crypt.wsgi file, and place that file in
 
-	/Library/Server/Web/Config/apache2/
+	/Library/Server/Web/Config/apache2/ **
 
-and finally edit the the com.aapps.crypt.plist specifying the location of where you placed crypt.wsgi, and place that file in
+and finally edit the the com.grahamgilbert.crypt.plist specifying the location of where you placed crypt.wsgi, and place that file in
 
-	/Library/Server/Web/Config/apache2/webapps/
+	/Library/Server/Web/Config/apache2/webapps/ **
 
+#######** if you've changed the "service data location" using the server app make the proper adjustments to the path.
